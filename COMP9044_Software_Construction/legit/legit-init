@@ -1,0 +1,16 @@
+#!/bin/dash
+
+filename=".legit"
+
+# if already created a legit, then report error
+if [ -e "$filename" ]
+then
+    echo "legit-init: error: .legit already exists" 1>&2
+    exit 1
+fi
+
+# make .legit fold
+if mkdir "$filename"
+then 
+    echo "Initialized empty legit repository in .legit"
+fi

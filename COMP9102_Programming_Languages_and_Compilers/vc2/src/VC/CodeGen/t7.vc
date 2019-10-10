@@ -1,0 +1,15 @@
+boolean c = true;
+int f(boolean b){
+	int i, j, k;
+	boolean a = true;
+	i = j = k = 1;
+	1 + (i = j = 2);
+	putBool(a);
+}
+
+void g(){}
+ 
+int main(){
+	(f(true));
+	g();
+}

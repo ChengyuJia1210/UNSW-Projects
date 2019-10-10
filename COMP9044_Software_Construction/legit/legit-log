@@ -1,0 +1,20 @@
+#!/bin/dash
+
+legitFold=".legit"
+logFile='.legit/log'
+
+# basic fold check
+if [ ! -d "$legitFold" ]
+then
+    echo "legit-add: error: no $legitFold directory containing legit repository exists" 1>&2
+    exit 1
+fi
+
+if [ ! -e "$logFile" ]
+then
+    echo "legit-log: error: no .legit directory containing legit repository exists" 1>&2
+    exit 1
+else
+    #reverse the output order, from bottom to top
+    tac "$logFile" | less | sed -r 's/\n//g'
+fi

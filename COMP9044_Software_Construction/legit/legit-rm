@@ -1,0 +1,203 @@
+#!/bin/dash
+
+legitFold=".legit"
+addFold='.legit/addFold'
+indexFold='.legit/index' # used to store the commit files
+logFile='.legit/log'
+currentFold='./'
+newestCommitFoldIndex=0
+numArgs=$#
+
+if [ ! -d "$legitFold" ]
+then
+    echo "legit-rm: error: no $legitFold directory containing legit repository exists" 1>&2
+    exit 1
+fi
+
+if [ ! -d "$indexFold" ]
+then 
+    echo "legit-rm: error: your repository does not have any commits yet" 1>&2
+    exit 1
+fi
+
+if [ $numArgs -eq 0 ]
+then 
+    echo "usage: legit-rm [--force] [--cached] <filenames>" 1>&2
+    exit 1
+fi
+
+# get the previous commit version and the next commit version may be created
+while [ true ]
+do
+    if [ ! -d "$indexFold/$newestCommitFoldIndex" ]
+    then
+        break
+    else
+        newestCommitFoldIndex=$((newestCommitFoldIndex+1))
+    fi
+done
+previousCommitVersion=$((newestCommitFoldIndex-1))
+
+# First check the first arg and second arg
+if [ "$1" = '--force' ] # then the rest may '--cached' or file names
+then
+    if [ "$2" = '--cached' ]
+    then
+        # first check file name valid or not
+        for file in "$@"
+        do
+            if [ $file != '--force' ] && [ $file != '--cached' ] && [ ! -e "$addFold/$file" ]
+            then 
+                echo "legit-rm: error: '$file' is not in the legit repository" 1>&2
+                exit 1
+            fi
+        done
+        # second rm those files in the addFold
+        for file in "$@"
+        do
+            if [ $file != '--force' ] && [ $file != '--cached' ]
+            then
+                rm "$addFold/$file"
+            fi
+        done
+    else    # else, file names
+        i=2 # the 2nd and rest args are file names
+        for file in "$@"
+        do
+            if [ $file != '--force' ] && [ ! -e "$addFold/$file" ]
+            then 
+                echo "legit-rm: error: '$file' is not in the legit repository" 1>&2
+                exit 1
+            fi
+        done
+        for file in "$@"
+        do
+            if [ $file != '--force' ] #13/07 8:29pm
+            then
+                rm "$addFold/$file"
+                if [ -e "$file" ]
+                then
+                    rm "$currentFold/$file"
+                fi
+            fi
+        done
+    fi
+else    # else, the first arg is '--cached', then the rest are file names
+    if [ "$1" = '--cached' ]
+    then
+        # first check file name valid or not
+        for file in "$@"
+        do
+            if [ $file != '--cached' ] && [ ! -e "$addFold/$file" ]
+            then 
+                echo "legit-rm: error: '$file' is not in the legit repository" 1>&2
+                exit 1
+            fi
+        done
+        # second rm those files in the addFold
+        for file in "$@"
+        do
+        # # 14/7 11:10am fixed bug
+            if [ $file != '--cached' ]
+            then
+                curAddFoldDiffFlag=0 
+                AddIndexFoldDiffFlag=0
+                IndexFoldHasNoSuchFileFlag=0
+
+                # do the file comparison to make sure the states
+                if [ -e "$currentFold/$file" ]
+                then
+                    curAddFoldDiff=$(diff "$currentFold/$file" "$addFold/$file")   
+                    if [ ! -z "$curAddFoldDiff" ]
+                    then 
+                        curAddFoldDiffFlag=1
+                    fi
+                fi
+                if [ ! -e "$indexFold/$previousCommitVersion/$file" ]
+                then
+                    IndexFoldHasNoSuchFileFlag=1
+                else
+                    curAddIndexFoldDiff=$(diff "$indexFold/$previousCommitVersion/$file" "$addFold/$file")
+                    if [ ! -z "$curAddIndexFoldDiff" ]
+                    then 
+                        AddIndexFoldDiffFlag=1
+                    fi
+                fi
+
+                if [ $curAddFoldDiffFlag -eq 1 ] && [ $AddIndexFoldDiffFlag -eq 1 ]
+                then 
+                    echo "legit-rm: error: '$file' in index is different to both working file and repository" 1>&2
+                    exit 1
+                fi
+                if [ $curAddFoldDiffFlag -eq 1 ] && [ $IndexFoldHasNoSuchFileFlag -eq 1 ]
+                then 
+                    echo "legit-rm: error: '$file' in index is different to both working file and repository" 1>&2
+                    exit 1
+                fi
+                rm "$addFold/$file"
+            fi
+        done
+    else  # rest are file names, command: ./legit-rm a.txt
+    # so in this part we need to check files commited or not,
+    # if not commited report error
+        # check previousCommitVersion's commit 
+        for file in "$@"
+        do
+            if [ ! -e "$addFold/$file" ]
+            then 
+                echo "legit-rm: error: '$file' is not in the legit repository" 1>&2
+                exit 1
+            fi
+            # then check the current fold has changed or not
+            # if equal to 1, then legit-rm: error: 'c' in repository is different to working file
+            curAddFoldDiffFlag=0 
+            # if equal to 1 and above equal to 1, legit-rm: error: 'd' in index is different to both working file and repository
+            AddIndexFoldDiffFlag=0
+
+            if [ -e "$currentFold/$file" ]
+            then
+                curAddFoldDiff=$(diff "$currentFold/$file" "$addFold/$file")
+            fi
+            if [ -e "$currentFold/$file" ] && [ ! -z "$curAddFoldDiff" ]
+            then 
+                curAddFoldDiffFlag=1
+            fi
+
+            # if file  not in the index fold, report error
+            if [ ! -e "$indexFold/$previousCommitVersion/$file" ]
+            then
+                echo "legit-rm: error: '$file' has changes staged in the index" 1>&2
+                exit 1
+            fi
+
+            curAddIndexFoldDiff=$(diff "$indexFold/$previousCommitVersion/$file" "$addFold/$file")
+            if [ ! -z "$curAddIndexFoldDiff" ]
+            then 
+                AddIndexFoldDiffFlag=1
+            fi 
+            if [ $curAddFoldDiffFlag -eq 1 ] && [ $AddIndexFoldDiffFlag -eq 1 ]
+            then
+                echo "legit-rm: error: '$file' in index is different to both working file and repository" 1>&2
+                exit 1
+            else
+                if [  $curAddFoldDiffFlag -eq 1 ]
+                then
+                    echo "legit-rm: error: '$file' in repository is different to working file" 1>&2
+                    exit 1
+                fi
+                if [ $AddIndexFoldDiffFlag -eq 1 ]
+                then 
+                    echo "legit-rm: error: '$file' has changes staged in the index" 1>&2
+                    exit 1
+                fi
+            fi           
+            
+            # remove
+            if [ -e "$currentFold/$file" ]
+            then 
+                rm "$currentFold/$file"
+            fi
+            rm "$addFold/$file"
+        done
+    fi
+fi

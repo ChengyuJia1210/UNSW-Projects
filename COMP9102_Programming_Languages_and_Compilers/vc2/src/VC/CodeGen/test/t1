@@ -1,0 +1,18 @@
+/*if stmt*/
+
+float f(int a, float b, int i){
+	if(i < 0){
+		b = b + a;
+		putFloat(b);
+	}
+	else{
+		b = b - a;
+		putFloat(b);
+	}
+	return b;
+}
+
+int main(){
+	f(5, 6, 1);
+	return 1;
+}

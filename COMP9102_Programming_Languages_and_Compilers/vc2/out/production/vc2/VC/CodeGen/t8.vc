@@ -1,0 +1,10 @@
+/*Id is boolean test*/
+int f(boolean c){
+	boolean a = true;
+	boolean b;
+	b = true;
+	b = false;
+	c = b = a;
+}
+
+int main(){}

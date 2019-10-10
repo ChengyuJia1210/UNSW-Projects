@@ -1,0 +1,25 @@
+int main(){}
+float f(){
+	float c;
+	boolean d;
+	if(1 == 1){
+		int a = 5;
+		float b = 6.6;
+		c = a*b;
+	}
+	else{
+		int a = 6;
+		float b = 7;
+		c = b/a;
+	}
+
+	return c;
+}
+
+/*
+int g(){
+	int a, b, c;
+	c = (a-5)/b-(6+5)*b;
+
+}*/
+

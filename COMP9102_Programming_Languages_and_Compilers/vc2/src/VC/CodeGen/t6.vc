@@ -1,0 +1,8 @@
+int f(){
+	int i = 0, j = 5;
+	float c = 1.0;
+	c = i + j + c * 2;
+
+}
+
+int main(){}

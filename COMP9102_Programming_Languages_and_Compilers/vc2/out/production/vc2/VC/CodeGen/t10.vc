@@ -1,0 +1,23 @@
+/* "||" and "!" test*/
+
+int f(){
+	boolean b1 = true;
+	boolean b2 = true;
+	float j;
+	int i;
+	i = 10;
+	if(b1 || b2)
+		b1 = true;
+	else
+		j = i;
+
+
+
+}
+int g(){
+	boolean i = true;
+	i = !!i;
+	i = !true;
+}
+
+int main(){}

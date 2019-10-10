@@ -1,0 +1,10 @@
+int f(int a, float b, float arr[10]){
+
+}
+
+int main(){
+	int a = 1;
+	int b = 10;
+	int c[] = {1,1,1,1,1,2,2,2,2,2};
+	f(a,b,c);
+}

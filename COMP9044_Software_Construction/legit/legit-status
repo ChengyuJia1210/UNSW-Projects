@@ -1,0 +1,168 @@
+#!/bin/dash
+
+legitFold=".legit"
+addFold='.legit/addFold'
+indexFold='.legit/index' # used to store the commit files
+logFile='.legit/log'
+currentFold='./'
+# this fold is use to track the files' name in the current fold, add fold and index fold
+statusRootFold='.legit/statusRootFold'
+newestStatusFoldVersion=0
+newestCommitFoldIndex=0
+
+#basic check
+if [ ! -d "$legitFold" ]
+then
+    echo "legit-status: error: no $legitFold directory containing legit repository exists" 1>&2
+    exit 1
+fi
+
+if [ ! -d "$indexFold" ]
+then 
+    echo "legit-status: error: your repository does not have any commits yet" 1>&2
+    exit 1
+fi
+
+# get the newest commit fold version
+while [ true ]
+do
+    if [ ! -d "$indexFold/$newestCommitFoldIndex" ]
+    then
+        break
+    else
+        newestCommitFoldIndex=$((newestCommitFoldIndex+1))
+    fi
+done
+previousCommitVersion=$((newestCommitFoldIndex-1))
+
+# create empty files in the statusFold that existed in the addFold CurFold and indexFold
+if [ ! -d "$statusRootFold" ]
+then
+    mkdir "$statusRootFold"
+fi
+# get the newest status fold version
+while [ true ]
+do
+    if [ ! -d "$statusRootFold/$newestStatusFoldVersion" ]
+    then
+        break
+    else
+        newestStatusFoldVersion=$((newestStatusFoldVersion+1))
+    fi
+done
+statusFold="$statusRootFold/$newestStatusFoldVersion"  
+mkdir "$statusFold"
+
+
+
+# put all the existing files into the statusFold
+for curFile in *
+do
+    curfilename=`echo "$curFile" | sed -r 's/.*\/(.*)$/\1/g'`
+    if [ ! -e "$statusFold/$curfilename" ] && [ -e "$curFile" ]
+    then
+        touch "$statusFold/$curfilename"
+    fi
+done
+for addFile in $addFold/*
+do
+    addfilename=`echo "$addFile" | sed -r 's/.*\/(.*)$/\1/g'`
+    if [ ! -e "$statusFold/$addfilename" ] && [ -e "$addFile" ]
+    then
+        touch "$statusFold/$addfilename"
+    fi
+done 
+for indexFile in $indexFold/$previousCommitVersion/*
+do
+    indexfilename=`echo "$indexFile" | sed -r 's/.*\/(.*)$/\1/g'`
+    if [ ! -e "$statusFold/$indexfilename" ] && [ -e "$indexFile" ]
+    then
+        touch "$statusFold/$indexfilename"
+    fi
+done 
+
+
+# Traversal the status Fold
+for file in $statusFold/*
+do
+    filename=`echo "$file" | sed -r 's/.*\/(.*)$/\1/g'`
+    curFile="$currentFold/$filename"
+    addFile="$addFold/$filename"
+    indexFile="$indexFold/$previousCommitVersion/$filename"
+
+    # There two circumstance, 1st the indexFold has same file name as statusFold has;
+    # 2nd, the indexFold doesn't have this file statusFold has, but the other Folds may have
+    if [ -e "$indexFile" ]
+    then
+        # don't need to check file content
+        if [ ! -e "$curFile" ] && [ ! -e "$addFile" ]
+        then
+            echo "$filename - deleted"
+            continue
+        fi   
+        if [ ! -e "$curFile" ] && [ -e "$addFile" ]
+        then
+            echo "$filename - file deleted"
+            continue
+        fi      
+        if [ -e "$curFile" ] && [ ! -e "$addFile" ]
+        then
+            echo "$filename - untracked"
+            continue
+        fi
+
+        # need to check file content
+        curChangedFlag=0 # curFile compare to addFile
+        addFileChangedFlag=0 # addFile compare to indexFile
+        curFileAddFileDiff=""
+        addFileIndexFileDiff=""
+        if [ -e "$curFile" ] && [ -e "$addFile" ]
+        then
+            curFileAddFileDiff=$(diff "$curFile" "$addFile")
+        fi
+        if [ -e "$addFile" ]
+        then
+            addFileIndexFileDiff=$(diff "$addFile" "$indexFile")
+        fi
+
+        # comparison
+        if [ -z "$curFileAddFileDiff" ] && [ ! -z "$addFileIndexFileDiff" ]
+        then
+            echo "$filename - file changed, changes staged for commit"
+            continue
+        fi
+        if [ ! -z "$curFileAddFileDiff" ] && [ -z "$addFileIndexFileDiff" ]
+        then
+            echo "$filename - file changed, changes not staged for commit"
+            continue
+        fi
+        if [ ! -z "$curFileAddFileDiff" ] || [ ! -z "$addFileIndexFileDiff" ] 
+        then 
+            echo "$filename - file changed, different changes staged for commit"
+            continue
+        fi
+        if [ -z "$curFileAddFileDiff" ] && [ -z "$addFileIndexFileDiff" ] 
+        then 
+            echo "$filename - same as repo"
+            continue
+        fi
+
+    else # is [ ! -e "$indexFile" ]
+        # don't need to check file content
+        if [ ! -e "$curFile" ] && [ ! -e "$addFile" ]
+        then
+            continue
+        fi
+        if [ -e "$curFile" ] && [ ! -e "$addFile" ] # && [ ! -e "$indexFile" ]
+        then
+            echo "$filename - untracked"
+            continue
+        fi
+        if [ -e "$curFile" ] && [ -e "$addFile" ] # && [ ! -e "$indexFile" ]
+        then
+            echo "$filename - added to index"
+            continue
+        fi
+    fi
+    echo "$filename - untracked" # attend
+done

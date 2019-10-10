@@ -1,0 +1,10 @@
+/*array*/
+
+int i = 15;
+boolean b[] = {true, true};
+
+int main(){
+	float a[] = {---1,+5,-6,-9,7,8};
+	boolean b[] = {true, false, false};
+	float i = 1;
+}

@@ -1,0 +1,23 @@
+int f(){
+	int i = 0;
+	float j;
+	for(i; i < 10; i = i + 1){
+		j = i;
+	}
+	return i;
+}
+
+float g(){
+	int i = 0;
+	float j;
+	for(i = 1; i < 10; i = i + 1){
+		j = i;
+	}
+	return j;
+
+}
+int main(){
+	boolean i = true;
+	float j = g();
+
+}

@@ -1,0 +1,9 @@
+void foo(int x[]) { }
+
+void goo() {
+  float y[10];
+
+  foo(y);
+}
+
+int main(){return 1;}

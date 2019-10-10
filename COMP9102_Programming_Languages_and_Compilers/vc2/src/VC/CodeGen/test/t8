@@ -1,0 +1,10 @@
+/*parameter varibale initialize*/
+
+float f(int a, boolean b[10]){
+	float c;
+	b[5];
+}
+
+int main(){
+	return 1;
+}

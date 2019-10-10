@@ -1,0 +1,66 @@
+#!/bin/dash
+
+legitFold=".legit"
+indexFold='.legit/index' # used to store the commit files
+addFold='.legit/addFold'
+arg=$1
+commitVersionFold=$(echo "$arg" | cut -d':' -f1 | sed -r 's/^[^0-9]*//g')
+# first for most, check .legit fold initialized or not
+if [ ! -d "$legitFold" ]
+then
+    echo "legit-add: error: no $legitFold directory containing legit repository exists" 1>&2
+    exit 1
+fi
+
+# fixed the bug 11/07 11:00am
+if [ ! -d "$indexFold" ]
+then
+    echo "legit-show: error: your repository does not have any commits yet" 1>&2
+    exit 1
+fi
+
+# if the number of argument bigger than one, report error
+if [ $# -ne 1 ]
+then 
+    echo "usage: legit-show <commit>:<filename>" 1>&2
+    exit 1
+fi
+
+
+# if not provide the file name after the ":", then report error
+fileName=$(echo "$arg" | cut -d':' -f2)
+if [ -z "$fileName" ]
+then
+    echo "legit-show: error: invalid filename ''" 1>&2
+    exit 1
+fi
+
+
+# if commitVersionFold is empty then fetch the addFold's version
+if [ -z "$commitVersionFold" ]
+then
+    # check the file in that addFold fold 
+    if [ ! -e "$addFold/$fileName" ]
+    then
+        echo "legit-show: error: '$fileName' not found in index" 1>&2
+        exit 1
+    else
+        cat "$addFold/$fileName"
+    fi
+else
+    # check the commit version fold exist or not
+    if [ ! -d "$indexFold/$commitVersionFold" ]
+    then
+        echo "legit-show: error: unknown commit '$commitVersionFold'" 1>&2
+        exit 1
+    fi
+
+    # check the file in that commit fold 
+    if [ ! -e "$indexFold/$commitVersionFold/$fileName" ]
+    then
+        echo "legit-show: error: '$fileName' not found in commit $commitVersionFold" 1>&2
+        exit 1
+    else
+        cat "$indexFold/$commitVersionFold/$fileName"
+    fi
+fi

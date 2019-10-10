@@ -1,0 +1,9 @@
+/*assignment*/
+
+int main(){
+	int i, j , h;
+	i = j = h = 5;
+	i = i - h + h;
+	j = i - j + h *(i - j)/i;
+	return 1;
+}

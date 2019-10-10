@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9987c8d-3b6c-4a72-8a3e-e4f37c2a9829" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/VC/Checker/Checker.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/VC/Checker/Checker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VC/Checker/test7.vc" beforeDir="false" afterPath="$PROJECT_DIR$/src/VC/Checker/test7.vc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VC/CodeGen/gcd.j" beforeDir="false" afterPath="$PROJECT_DIR$/src/VC/CodeGen/gcd.j" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VC/CodeGen/vc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VC/vc.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/VC/vc.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="vc2" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/VC/Parser/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18270">
+              <caret line="1059" column="11" selection-start-line="1059" selection-start-column="11" selection-end-line="1059" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/Checker/Checker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16038">
+              <caret line="934" column="43" selection-start-line="934" selection-start-column="43" selection-end-line="934" selection-end-column="43" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Ident.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              <folding>
+                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#330#331#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Terminal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/Emitter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6498">
+              <caret line="381" selection-start-line="381" selection-end-line="381" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#19918#19919#0" expanded="true" />
+                <element signature="e#19945#19946#0" expanded="true" />
+                <element signature="e#20028#20029#0" expanded="true" />
+                <element signature="e#20055#20056#0" expanded="true" />
+                <element signature="e#20124#20125#0" expanded="true" />
+                <element signature="e#20151#20152#0" expanded="true" />
+                <element signature="e#20212#20213#0" expanded="true" />
+                <element signature="e#20239#20240#0" expanded="true" />
+                <element signature="e#26506#26507#0" expanded="true" />
+                <element signature="e#26533#26534#0" expanded="true" />
+                <element signature="e#28571#28572#0" expanded="true" />
+                <element signature="e#28598#28599#0" expanded="true" />
+                <element signature="e#28733#28734#0" expanded="true" />
+                <element signature="e#28760#28761#0" expanded="true" />
+                <element signature="e#30753#30754#0" expanded="true" />
+                <element signature="e#30780#30781#0" expanded="true" />
+                <element signature="e#31116#31117#0" expanded="true" />
+                <element signature="e#31143#31144#0" expanded="true" />
+                <element signature="e#31302#31303#0" expanded="true" />
+                <element signature="e#31329#31330#0" expanded="true" />
+                <element signature="e#31390#31391#0" expanded="true" />
+                <element signature="e#31417#31418#0" expanded="true" />
+                <element signature="e#31494#31495#0" expanded="true" />
+                <element signature="e#31521#31522#0" expanded="true" />
+                <element signature="e#31748#31749#0" expanded="true" />
+                <element signature="e#31775#31776#0" expanded="true" />
+                <element signature="e#31834#31835#0" expanded="true" />
+                <element signature="e#31861#31862#0" expanded="true" />
+                <element signature="e#31922#31923#0" expanded="true" />
+                <element signature="e#31949#31950#0" expanded="true" />
+                <element signature="e#34369#34370#0" expanded="true" />
+                <element signature="e#34396#34397#0" expanded="true" />
+                <element signature="e#34897#34898#0" expanded="true" />
+                <element signature="e#34943#34944#0" expanded="true" />
+                <element signature="e#34990#34991#0" expanded="true" />
+                <element signature="e#35025#35026#0" expanded="true" />
+                <element signature="e#35068#35069#0" expanded="true" />
+                <element signature="e#35102#35103#0" expanded="true" />
+                <element signature="e#35147#35148#0" expanded="true" />
+                <element signature="e#35181#35182#0" expanded="true" />
+                <element signature="e#35235#35236#0" expanded="true" />
+                <element signature="e#35280#35281#0" expanded="true" />
+                <element signature="e#35338#35339#0" expanded="true" />
+                <element signature="e#35384#35385#0" expanded="true" />
+                <element signature="e#37462#37463#0" expanded="true" />
+                <element signature="e#37521#37522#0" expanded="true" />
+                <element signature="e#38288#38289#0" expanded="true" />
+                <element signature="e#38347#38348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/ASTs/ExprList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/Checker/IdEntry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/ASTs/IntExpr.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding>
+                <element signature="e#316#317#0" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/Frame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1566">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
+              <folding>
+                <element signature="e#2354#2355#0" expanded="true" />
+                <element signature="e#2379#2380#0" expanded="true" />
+                <element signature="e#2775#2776#0" expanded="true" />
+                <element signature="e#2808#2809#0" expanded="true" />
+                <element signature="e#2945#2946#0" expanded="true" />
+                <element signature="e#2964#2965#0" expanded="true" />
+                <element signature="e#3744#3745#0" expanded="true" />
+                <element signature="e#3762#3763#0" expanded="true" />
+                <element signature="e#4429#4430#0" expanded="true" />
+                <element signature="e#4464#4465#0" expanded="true" />
+                <element signature="e#4497#4498#0" expanded="true" />
+                <element signature="e#4532#4533#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Sys</find>
+      <find>order</find>
+      <find>CodeG</find>
+      <find>visitArrayE</find>
+      <find>sys</find>
+      <find>visitcomp</find>
+      <find>visitcall</find>
+      <find>factor</find>
+      <find>visitBi</find>
+      <find>checkIdPart</find>
+      <find>isIdentifier</find>
+      <find>visitPar</find>
+      <find>visitIf</find>
+      <find>coerci</find>
+      <find>visitFun</find>
+      <find>visitExpr</find>
+      <find>visitInt</find>
+      <find>coercions</find>
+      <find>) o</find>
+      <find>visitLo</find>
+      <find>visitIden</find>
+      <find>parseRecursiveExpr</find>
+      <find>estab</find>
+      <find>Terminal</find>
+      <find>invoke</find>
+      <find>visitFU</find>
+      <find>getnex</find>
+      <find>getNe</find>
+      <find>vc$</find>
+      <find>parseif</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/VC" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/VC/TreeDrawer/LayoutVisitor.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/DeclList.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/FuncDecl.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/ArrayExpr.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/ArrayType.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/ReturnStmt.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/VarExpr.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/EmptyArgList.java" />
+        <option value="$PROJECT_DIR$/src/VC/ASTs/CallExpr.java" />
+        <option value="$PROJECT_DIR$/src/VC/lang/System.java" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/Emmiter.java" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/test.java" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t5.vc" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t1.vc" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t5.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t1.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t2.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t3.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t10.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t4.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/gcd.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t13.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t12.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/test/t1" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/test/t1.j" />
+        <option value="$PROJECT_DIR$/src/VC/vc.java" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/t18.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/test/t18.java" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/test/t6.j" />
+        <option value="$PROJECT_DIR$/src/VC/CodeGen/Emitter.java" />
+        <option value="$PROJECT_DIR$/src/VC/Checker/Checker.java" />
+        <option value="$PROJECT_DIR$/src/VC/Parser/Parser.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="vc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vc2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vc2" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment4_store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vc2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../VC" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/VC" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="vc" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VC.vc" />
+      <module name="vc2" />
+      <option name="PROGRAM_PARAMETERS" value="-d 3 ./src/VC/CodeGen/test/t10.vc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="VC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9987c8d-3b6c-4a72-8a3e-e4f37c2a9829" name="Default Changelist" comment="" />
+      <created>1554361579365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554361579365</updated>
+      <workItem from="1554361582609" duration="170440000" />
+      <workItem from="1555134281732" duration="14054000" />
+      <workItem from="1555285799052" duration="3145000" />
+      <workItem from="1555487623472" duration="2747000" />
+      <workItem from="1555626865989" duration="9557000" />
+      <workItem from="1555716681389" duration="6983000" />
+      <workItem from="1555724357835" duration="55444000" />
+      <workItem from="1555888310700" duration="87977000" />
+      <workItem from="1556235337967" duration="658000" />
+      <workItem from="1556356343358" duration="1284000" />
+      <workItem from="1556409539783" duration="10654000" />
+      <workItem from="1556495221847" duration="34000" />
+      <workItem from="1556669824667" duration="15060000" />
+      <workItem from="1556840395172" duration="6153000" />
+      <workItem from="1556932648750" duration="3497000" />
+      <workItem from="1556963516705" duration="5861000" />
+      <workItem from="1557049808522" duration="12204000" />
+      <workItem from="1557802311992" duration="5000" />
+      <workItem from="1569973598668" duration="320000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="406077000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49636805" visible="true" weight="0.15722266" />
+      <window_info id="Structure" order="1" sideWeight="0.50363195" side_tool="true" weight="0.11811652" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" sideWeight="0.5015528" side_tool="true" weight="0.1811652" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20341615" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23535565" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32845187" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.23447205" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.32608697" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32919255" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49636805" visible="true" weight="0.13886672" />
+      <window_info id="Structure" order="1" sideWeight="0.50363195" side_tool="true" weight="0.11811652" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" sideWeight="0.5015528" side_tool="true" weight="0.1811652" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33850932" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42857143" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32919255" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32763976" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32919255" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/VC/CodeGen/Emitter.java</url>
+          <line>400</line>
+          <properties />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/VC/CodeGen/Emitter.java</url>
+          <line>1421</line>
+          <properties />
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/VC/Parser/Parser.java</url>
+          <line>833</line>
+          <properties class="VC.Parser.Parser" method="parsePrimaryExpr">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/EmptyDeclList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#298#299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/ReturnStmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#429#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/CompoundStmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#422#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/ArgList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#395#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Scanner/SourceFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/CallExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Arg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#335#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/JVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1944">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/VarExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#338#339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/vc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="158" column="58" lean-forward="true" selection-start-line="158" selection-start-column="58" selection-end-line="158" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/test/t18.class" />
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/t18_2.j" />
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/t18.class" />
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/test/t18.java" />
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/t18.j">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/test/t6.j">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/IntType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/vc.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/LocalVarDecl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/SimpleVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#356#357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/EmptyStmtList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#298#299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Parser/Parser.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Checker/Checker.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Recogniser/Recogniser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="101" column="16" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Visitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Scanner/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5490">
+          <caret line="311" column="5" selection-start-line="311" selection-start-column="5" selection-end-line="311" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/StmtList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/ArrayExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#534#535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Scanner/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/FuncDecl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/AST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/DeclList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/ExprStmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/IntLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/StdEnvironment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Expr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Checker/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#0#3151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Scanner/SourcePosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Ident.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/Terminal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/Emitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6498">
+          <caret line="381" selection-start-line="381" selection-end-line="381" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#19918#19919#0" expanded="true" />
+            <element signature="e#19945#19946#0" expanded="true" />
+            <element signature="e#20028#20029#0" expanded="true" />
+            <element signature="e#20055#20056#0" expanded="true" />
+            <element signature="e#20124#20125#0" expanded="true" />
+            <element signature="e#20151#20152#0" expanded="true" />
+            <element signature="e#20212#20213#0" expanded="true" />
+            <element signature="e#20239#20240#0" expanded="true" />
+            <element signature="e#26506#26507#0" expanded="true" />
+            <element signature="e#26533#26534#0" expanded="true" />
+            <element signature="e#28571#28572#0" expanded="true" />
+            <element signature="e#28598#28599#0" expanded="true" />
+            <element signature="e#28733#28734#0" expanded="true" />
+            <element signature="e#28760#28761#0" expanded="true" />
+            <element signature="e#30753#30754#0" expanded="true" />
+            <element signature="e#30780#30781#0" expanded="true" />
+            <element signature="e#31116#31117#0" expanded="true" />
+            <element signature="e#31143#31144#0" expanded="true" />
+            <element signature="e#31302#31303#0" expanded="true" />
+            <element signature="e#31329#31330#0" expanded="true" />
+            <element signature="e#31390#31391#0" expanded="true" />
+            <element signature="e#31417#31418#0" expanded="true" />
+            <element signature="e#31494#31495#0" expanded="true" />
+            <element signature="e#31521#31522#0" expanded="true" />
+            <element signature="e#31748#31749#0" expanded="true" />
+            <element signature="e#31775#31776#0" expanded="true" />
+            <element signature="e#31834#31835#0" expanded="true" />
+            <element signature="e#31861#31862#0" expanded="true" />
+            <element signature="e#31922#31923#0" expanded="true" />
+            <element signature="e#31949#31950#0" expanded="true" />
+            <element signature="e#34369#34370#0" expanded="true" />
+            <element signature="e#34396#34397#0" expanded="true" />
+            <element signature="e#34897#34898#0" expanded="true" />
+            <element signature="e#34943#34944#0" expanded="true" />
+            <element signature="e#34990#34991#0" expanded="true" />
+            <element signature="e#35025#35026#0" expanded="true" />
+            <element signature="e#35068#35069#0" expanded="true" />
+            <element signature="e#35102#35103#0" expanded="true" />
+            <element signature="e#35147#35148#0" expanded="true" />
+            <element signature="e#35181#35182#0" expanded="true" />
+            <element signature="e#35235#35236#0" expanded="true" />
+            <element signature="e#35280#35281#0" expanded="true" />
+            <element signature="e#35338#35339#0" expanded="true" />
+            <element signature="e#35384#35385#0" expanded="true" />
+            <element signature="e#37462#37463#0" expanded="true" />
+            <element signature="e#37521#37522#0" expanded="true" />
+            <element signature="e#38288#38289#0" expanded="true" />
+            <element signature="e#38347#38348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/ExprList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Checker/IdEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/ASTs/IntExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/CodeGen/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#2354#2355#0" expanded="true" />
+            <element signature="e#2379#2380#0" expanded="true" />
+            <element signature="e#2775#2776#0" expanded="true" />
+            <element signature="e#2808#2809#0" expanded="true" />
+            <element signature="e#2945#2946#0" expanded="true" />
+            <element signature="e#2964#2965#0" expanded="true" />
+            <element signature="e#3744#3745#0" expanded="true" />
+            <element signature="e#3762#3763#0" expanded="true" />
+            <element signature="e#4429#4430#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4497#4498#0" expanded="true" />
+            <element signature="e#4532#4533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Checker/Checker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16038">
+          <caret line="934" column="43" selection-start-line="934" selection-start-column="43" selection-end-line="934" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment4_store/Checker_10_april_night.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VC/Parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18270">
+          <caret line="1059" column="11" selection-start-line="1059" selection-start-column="11" selection-end-line="1059" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

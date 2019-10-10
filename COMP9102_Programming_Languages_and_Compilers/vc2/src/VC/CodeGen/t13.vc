@@ -1,0 +1,13 @@
+/*test forStmt's third expr*/
+
+int f(){
+	int i;
+	for(i = 0; i < 10; i = i+1){
+		i;
+	}
+	return i;
+}
+
+int main(){
+	int i = f();
+}

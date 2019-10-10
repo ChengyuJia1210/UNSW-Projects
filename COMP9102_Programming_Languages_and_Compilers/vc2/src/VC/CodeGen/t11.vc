@@ -1,0 +1,9 @@
+/*boolean test , "!"*/
+
+int f(){
+	boolean i = true;
+	i = !i;
+
+}
+
+int main(){}

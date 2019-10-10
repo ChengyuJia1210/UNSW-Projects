@@ -1,0 +1,9 @@
+float main(){
+	int a = 5;
+	float b = 6.6;
+	int c = 5;
+	-c;
+	a = a+b;
+	b = b-a;
+	return c;
+}

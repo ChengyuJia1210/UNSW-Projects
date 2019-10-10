@@ -1,0 +1,8 @@
+/*normal variable initialize*/
+
+int i;
+
+int main(){
+	float j;
+	boolean b = true, c;
+}

@@ -1,0 +1,180 @@
+#!/bin/dash
+
+legitFold=".legit"
+addFold='.legit/addFold'
+indexFold='.legit/index' # used to store the commit files
+logFile='.legit/log'
+currentFold='./'
+newestCommitFoldIndex=0
+
+if [ ! -d "$legitFold" ]
+then
+    echo "legit-commit: error: no $legitFold directory containing legit repository exists" 1>&2
+    exit 1
+fi
+
+if [ ! -d "$indexFold" ]
+then
+    mkdir "$indexFold"
+fi
+
+# First check ./legit-commit -m Message
+if [ "$1" != '-m' -o $# -ne 2 ]
+then
+    # Then check ./legit-commit -a -m Message
+    if [ "$1" != '-a' -o "$2" != '-m' -o $# -ne 3 ]
+    then
+        echo 'usage: legit-commit [-a] -m commit-message' 1>&2
+        exit 1
+    fi
+fi
+
+# get the previous commit version and the next commit version may be created
+while [ true ]
+do
+    if [ ! -d "$indexFold/$newestCommitFoldIndex" ]
+    then
+        break
+    else
+        newestCommitFoldIndex=$((newestCommitFoldIndex+1))
+    fi
+done
+
+if [ $# -eq 2 ]
+then 
+    # if newestCommitFoldIndex == 0, means there is no commit before,
+    # then create commit fold, 
+    # and store the files which want to be commited
+    # else, make the files to comapre with the previous Commit  files
+    if [ $newestCommitFoldIndex -eq 0 ]
+    then 
+        newPath=""$indexFold/$newestCommitFoldIndex""
+        mkdir "$newPath"
+        cp "$addFold"/* "$newPath"
+        echo "Committed as commit $newestCommitFoldIndex"
+    else
+        # this index is actually newest commit fold index
+        previousCommitFoldIndex=$((newestCommitFoldIndex-1))
+        previousPath="$indexFold/$previousCommitFoldIndex"
+        # if add fold has something changed, make a newest commit fold 
+        # and copy files in the add fold to the newest commit fold
+        different=$(diff "$previousPath" "$addFold")
+        if [ ! -z  "$different" ]
+        then
+            newPath=""$indexFold/$newestCommitFoldIndex""
+            mkdir "$newPath"
+            
+	   #13/7 10:29pm fixed
+            for addFile in "$addFold"/*
+            do
+                if [ -e "$addFile"  ]
+                then
+                        cp "$addFile" "$newPath"
+                fi
+            done
+
+            echo "Committed as commit $newestCommitFoldIndex"
+        else  # else, "nothing to commit"
+            echo 'nothing to commit'
+            exit 0
+        fi
+    fi
+    echo "$newestCommitFoldIndex $2" >> "$logFile"
+else
+    # if the addFold not exist, then report
+    if [ ! -d $addFold ]
+    then 
+        echo "nothing to commit"
+        exit 0
+    fi
+    # if newestCommitFoldIndex == 0, means there is no commit before,
+    # then create commit fold, 
+    # and store the files which want to be commited in the addFold
+    # else, make the current files to comapre with the previous Commit files,
+    #   if none change, do nothing;
+    #   else if changed, scan the addFold first, 
+    #      if addFold has files but current fold doesn't exist, rm those files in the addFold
+    #      then update the files that has been changed in the current fold into the addFold
+    #      then commit the files in the addFold to indexFold
+    if [ $newestCommitFoldIndex -eq 0 ]
+    then 
+        newPath=""$indexFold/$newestCommitFoldIndex""
+        mkdir "$newPath"
+        cp "$addFold"/* "$newPath"
+        echo "Committed as commit $newestCommitFoldIndex"
+    else
+        # this index is actually newest commit fold index
+        previousCommitFoldIndex=$((newestCommitFoldIndex-1))
+        previousPath="$indexFold/$previousCommitFoldIndex"
+        newPath=""$indexFold/$newestCommitFoldIndex""
+
+        # if add fold has something changed, make a newest commit fold 
+        # and copy files in the add fold to the newest commit fold
+
+        # first check the addFold, if it has the files that current fold does not exist,
+        # rm those files
+        for addFile in $addFold/*
+        do
+            filename=`echo "$addFile" | sed -r 's/.*\/(.*)$/\1/g'`
+            if [ ! -e "$currentFold/$filename" ]
+            then
+                rm "$addFile"
+            fi
+        done
+
+        # rigth now, just need to manipulate the currentFold
+
+        # check do commit or not, 0 should not, larger than 0 should commit to a new fold
+        flag='0' 
+        for curFile in $currentFold/*
+        do
+            different=''
+            # if current file in the addFold, wahtever just update file in the addFold
+            # then need to do the comparison with previous commit Fold
+            if [ -e "$addFold/$curFile" ]
+            then
+                cp "$currentFold/$curFile" "$addFold/$curFile"
+                if [ -e "$previousPath/$curFile" ]
+                then 
+                    different=$(diff "$previousPath/$curFile" "$addFold/$curFile")
+                    if [ ! -z "$different" ]
+                    then
+                        flag=$((flag+1))
+                    fi
+                # else the previousPath doesn't exist but addFold has, still flag++
+                else
+                    flag=$((flag+1))
+                fi
+            fi
+        done
+        # 11/07 10:35am fixed the bug
+        for indexFile in $previousPath/*
+        do
+            
+            indexFileName=`echo "$indexFile" | sed -r 's/.*\/(.*)$/\1/g'`
+            if [ ! -e "$addFold/$indexFileName" ]
+            then
+                flag=$((flag+1))
+            fi
+        done
+
+        if [ $flag -gt 0 ]
+        then
+            mkdir "$newPath"
+	    
+	    #13/7 10:29pm fixed
+	    for addFile in "$addFold"/*
+	    do	
+		if [ -e "$addFile"  ]
+		then
+			cp "$addFile" "$newPath"
+		fi
+	    done
+            echo "Committed as commit $newestCommitFoldIndex"
+        else 
+            echo "nothing to commit"
+            exit 0
+        fi
+    fi
+    echo "$newestCommitFoldIndex $3" >> "$logFile"
+fi

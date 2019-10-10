@@ -1,0 +1,20 @@
+
+
+int main(int a2, boolean b2, float c2){
+	int a1 = 5;
+	boolean a = true;
+	boolean b = flase;
+	int c;
+	c = a == b;
+	d = 5;
+	/*c + 5 *6 && d || s;*/
+	return;
+}
+/*
+boolean d(){
+	int a = 5;
+	int c[6] = {1,2,3,4,5};
+	return a;
+	a1 = 5;
+	b = 6;
+}*/

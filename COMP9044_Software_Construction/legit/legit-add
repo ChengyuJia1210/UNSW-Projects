@@ -1,0 +1,56 @@
+#!/bin/dash
+
+legitFold=".legit"
+addDrectory='.legit/addFold'
+firstCharErr='legit-add: error: internal error this repository was not created by the reference implementation'
+containErr='legit-add: error: internal error this repository was not created by the reference implementation'
+
+if [ ! -d "$legitFold" ]
+then
+    echo "legit-add: error: no $legitFold directory containing legit repository exists" 1>&2
+    exit 1
+fi
+
+
+if [ ! -d  "$addDrectory" ]
+then
+    mkdir "$addDrectory"
+fi
+
+if [ "$#" -eq 0 ]
+then
+    echo "usage: legit-add <filenames>" 1>&2
+    exit 1
+fi
+
+for file in $*
+do
+    # First validate the file name string
+    # start char
+    if [ `expr "$file" : "^[^0-9a-zA-Z]"` -gt 0 ]
+    then
+        echo "$firstCharErr" 1>&2
+        exit 1
+    fi
+    # rest chars
+    restChar=`echo "$file" | sed -r 's/^.(.*)$/\1/g'`
+    test=`echo "$restChar" | sed -r 's/[0-9a-zA-Z\._-]//g'`
+    if [ ! -z "$test" ]
+    then
+        echo "$containErr" 1>&2
+        exit 1
+    fi
+
+    # Then process the file
+    if [ ! -e "$file" ] && [ ! -e "$addDrectory/$file" ]
+    then
+        echo "legit-add: error: can not open '$file'" 1>&2
+        exit 1
+    fi
+    if [ ! -e "$file" ] && [ -e "$addDrectory/$file" ]
+    then
+        rm "$addDrectory/$file"
+    else
+        cp "$file" "$addDrectory"
+    fi
+done

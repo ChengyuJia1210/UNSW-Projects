@@ -1,0 +1,10 @@
+/* && test*/
+
+int f(){
+	boolean b1 = false, b2 = true;
+	if(b1 && b2)
+		b1 = true;
+
+}
+
+int main(){}

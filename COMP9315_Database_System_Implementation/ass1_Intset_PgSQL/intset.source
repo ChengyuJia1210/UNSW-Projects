@@ -1,0 +1,186 @@
+---------------------------------------------------------------------------
+--
+-- complex.sql-
+--    This file shows how to create a new user-defined type and how to
+--    use this new type.
+--
+--
+-- Portions Copyright (c) 1996-2017, PostgreSQL Global Development Group
+-- Portions Copyright (c) 1994, Regents of the University of California
+--
+-- src/tutorial/intset.source
+--
+---------------------------------------------------------------------------
+
+-- Assume the user defined functions are in _OBJWD_/complex$DLSUFFIX
+-- (we do not want to assume this is in the dynamic loader search path).
+-- Look at $PWD/complex.c for the source.  Note that we declare all of
+-- them as STRICT, so we do not need to cope with NULL inputs in the
+-- C code.  We also mark them IMMUTABLE, since they always return the
+-- same outputs given the same inputs.
+
+-- the input function 'complex_in' takes a null-terminated string (the
+-- textual representation of the type) and turns it into the internal
+-- (in memory) representation. You will get a message telling you 'complex'
+-- does not exist yet but that's okay.
+
+CREATE FUNCTION intset_in(cstring)
+   RETURNS intset
+   AS '_OBJWD_/intset'
+   LANGUAGE C IMMUTABLE STRICT;
+
+-- the output function 'complex_out' takes the internal representation and
+-- converts it into the textual representation.
+
+CREATE FUNCTION intset_out(intset)
+   RETURNS cstring
+   AS '_OBJWD_/intset'
+   LANGUAGE C IMMUTABLE STRICT;
+
+-- the binary input function 'complex_recv' takes a StringInfo buffer
+-- and turns its contents into the internal representation.
+
+-- CREATE FUNCTION complex_recv(internal)
+--    RETURNS complex
+--    AS '_OBJWD_/complex'
+--    LANGUAGE C IMMUTABLE STRICT;
+
+-- the binary output function 'complex_send' takes the internal representation
+-- and converts it into a (hopefully) platform-independent bytea string.
+
+-- CREATE FUNCTION complex_send(complex)
+--    RETURNS bytea
+--    AS '_OBJWD_/complex'
+--    LANGUAGE C IMMUTABLE STRICT;
+
+
+-- now, we can create the type. The internallength specifies the size of the
+-- memory block required to hold the type (we need two 8-byte doubles).
+
+CREATE TYPE intset (
+   input = intset_in,
+   output = intset_out,
+   alignment = int
+);
+
+-- internallength = 4,
+-----------------------------
+-- Using the new type:
+--	user-defined types can be used like ordinary built-in types.
+-----------------------------
+
+create table mySets (id integer primary key, iset intSet);
+--insert into mySets values (1, '{1,2,3}');
+--insert into mySets values (2, '{4, 5, 67777}');
+--insert into mySets values (3, '{1,2,3,5,6,6,42313,112312,414214,2312,5514}');
+--insert into mySets values (4, '{3,1}');
+--insert into mySets values (5, '{4, 5, 67777}');
+
+insert into mySets values (1, '{1,2,3}');
+insert into mySets values (2, '{1,3,1,3,1}');
+insert into mySets values (3, '{3,4,5}');
+insert into mySets values (4, '{4,5}');
+insert into mySets values (5, '{4, 5, 67777}');
+insert into mySets values (6, '{1,2,3,5,6,6,42313,112312,414214,2312,5514}');
+
+-----------------------------
+-- Create operators for intSet
+-----------------------------
+CREATE FUNCTION intSet_isin(int, intset)
+  RETURNS bool
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;
+
+CREATE FUNCTION intSet_cardinality(intset)
+  RETURNS int
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;
+
+CREATE FUNCTION intSet_subset(intset, intset)
+  RETURNS bool
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;
+
+CREATE FUNCTION intSet_equal(intset, intset)
+  RETURNS bool
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;
+
+--A∩B intset_intersection
+CREATE FUNCTION intSet_intersection(intSet, intSet)
+  RETURNS intset
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;	
+
+--A || B, A∪B
+CREATE FUNCTION intSet_union(intSet, intSet)
+  RETURNS intset
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;	
+
+-- A !! B
+CREATE FUNCTION intSet_disjunction(intSet, intSet)
+  RETURNS intset
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;
+
+--A - B
+CREATE FUNCTION intSet_difference(intSet, intSet)
+  RETURNS intset
+  AS '_OBJWD_/intset'
+  LANGUAGE C IMMUTABLE STRICT;
+
+-- define corresponding operator of isin
+CREATE OPERATOR <@ (
+    leftarg = int,
+    rightarg = intset,
+    procedure = intSet_isin
+);
+
+-- define corresponding operator of cardinality
+CREATE OPERATOR @ (
+    rightarg = intset,
+    procedure = intSet_cardinality
+);
+
+-- define corresponding operator of subset
+CREATE OPERATOR @> (
+    leftarg = intset,
+    rightarg = intset,
+    procedure = intSet_subset
+);
+
+-- define corresponding operator of equal
+CREATE OPERATOR = (
+    leftarg = intset,
+    rightarg = intset,
+    procedure = intSet_equal
+);
+
+-- define corresponding operator of intersection
+CREATE OPERATOR && (
+    leftarg = intset,
+    rightarg = intset,
+    procedure = intSet_intersection
+);
+
+-- define corresponding operator of union
+CREATE OPERATOR || (
+    leftarg = intset,
+    rightarg = intset,
+    procedure = intSet_union
+);
+
+-- define corresponding operator of disjunction
+CREATE OPERATOR !! (
+    leftarg = intset,
+    rightarg = intset,
+    procedure = intSet_disjunction
+);
+
+-- define corresponding operator of different
+CREATE OPERATOR - (
+    leftarg = intset,
+    rightarg = intset,
+    procedure = intSet_difference
+);

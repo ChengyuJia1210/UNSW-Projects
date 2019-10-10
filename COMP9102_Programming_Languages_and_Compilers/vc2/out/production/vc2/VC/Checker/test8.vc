@@ -1,0 +1,9 @@
+int f(){}
+float g(){}
+
+int main(){
+	float c;
+	c = f()+g();
+	c = +m();
+	return 5;
+}
